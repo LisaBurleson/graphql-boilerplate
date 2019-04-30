@@ -1,0 +1,7 @@
+# intellij files/folders
+.idea/
+*.iml
+
+# node files/folders
+node_modules/
+dist/
