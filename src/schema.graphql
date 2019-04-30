@@ -1,12 +1,8 @@
-type Query{
-    me: User!
-}
+# import User from "schemas/users.graphql"
+# import Book from "schemas/books.graphql"
 
-#An authenticated User of the system
-type User {
-    #The user ID
-    id: ID!
-    #The username to user chose for themselves"
-    userName: String!
-    email: String!
+type Query{
+  me: User!
+  book: Book!
+  books: [Book!]!
 }

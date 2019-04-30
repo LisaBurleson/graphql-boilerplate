@@ -1,0 +1,8 @@
+"An authenticated User of the system"
+type User {
+  "The user ID"
+  id: ID!
+  "The username to user chose for themselves"
+  userName: String!
+  email: String!
+}

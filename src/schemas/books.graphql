@@ -1,0 +1,10 @@
+# import Author from "author.graphql"
+
+"A book, just a book, only a book"
+type Book{
+  id: ID
+  name: String!
+  author: Author!
+}
+
+
