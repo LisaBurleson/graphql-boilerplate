@@ -1,6 +1,7 @@
 # intellij files/folders
 .idea/
 *.iml
+secret/
 
 # node files/folders
 node_modules/

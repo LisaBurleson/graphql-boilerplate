@@ -1,4 +1,4 @@
-const MeResolver = {
+export default {
   Query:{
     me( parent, args, ctx, info ) {
       return {
@@ -11,4 +11,3 @@ const MeResolver = {
   }
 };
 
-export {MeResolver as default};

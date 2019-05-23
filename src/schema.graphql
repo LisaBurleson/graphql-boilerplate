@@ -1,8 +1,11 @@
 # import User from "schemas/users.graphql"
-# import Book from "schemas/books.graphql"
+# import Book from "schemas/book.graphql"
+# import Author from "schemas/author.graphql"
+
 
 type Query{
   me: User!
+  author(name: String): Author!
   book: Book!
   books: [Book!]!
 }

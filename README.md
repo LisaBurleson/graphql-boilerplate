@@ -8,7 +8,7 @@
 	npm i babel-cli babel-plugin-transform-object-rest-spread babel-preset-env
 	npm install --save-dev nodemon
 	mkdir src/resolvers
-	touch src/resolvers/Query.js
+	touch src/resolvers/MeResolver.js
 	
 Once all of these are installed, we can now configure the boilerplate project.
   
@@ -28,6 +28,11 @@ Once all of these are installed, we can now configure the boilerplate project.
      ]
    }
  ```
+
+## future tasks
+  - add a db to the context for resolvers to use
+  - create some dao object for dao queries
+
 
 # schema generators
 https://github.com/NathanLapp/db-to-graphql
