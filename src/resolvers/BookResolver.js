@@ -1,30 +1,34 @@
 export default {
-  Query:{
+  Query: {
     book( parent, args, ctx, info ) {
-      console.log('called book resolver');
+      console.log( `called book resolver, args = `, JSON.stringify( args ) )
       return {
         id: 'dasdkfjasdfas',
         name: 'Sorcerer\'s apprentice'
-      };
+      }
     },
-    books(parent, args, ctx, info){
+    books( parent, args, ctx, info ) {
+      console.log( `called books resolver, args = `, JSON.stringify( args ) )
       return [
         {
           id: 'dasdkfjasdfas',
-          name: 'Pawn Of Prophecy'
+          name: 'Pawn Of Prophecy',
+          authorId: '2342342'
         },
         {
-          id: 'dasdkfjasdfas',
-          name: 'Sorcerer\'s apprentice'
+          id: 's3445fsdfs',
+          name: 'Sorcerer\'s apprentice',
+          authorId: '2342342'
         },
         {
-          id: 'dasdkfjasdfas',
-          name: 'Queen Of Sorcery'
+          id: '5354jhdsfsjdf4',
+          name: 'Queen Of Sorcery',
+          authorId: '2342342'
         }
       ]
     }
   },
-  Book:{
+  Book: {
     /**
      * called when an book's author property is encountered.
      * @param parent
@@ -33,14 +37,16 @@ export default {
      * @param info
      * @return {{firstName: string, lastName: string, id: string}}
      */
-    author(parent, args, ctx, info){
-      console.log('called Book.author resolver');
+    author( parent, args, ctx, info ) {
+      console.log( 'called Book.author resolver', JSON.stringify( parent ) )
       return {
         id: '2342342',
-          firstName: 'David',
-          lastName: 'Eddings'
-      };
+        firstName: 'David',
+        lastName: 'Eddings'
+      }
     }
   }
-};
+}
+
+
 

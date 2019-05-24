@@ -1,7 +1,16 @@
+const DataLoader = require( 'dataloader' )
+/**
+ * Create a loader to get all the keys/ids for books
+ * @type {DataLoader<any, any>}
+ */
+const bookLoader = new DataLoader( ( bookIds ) => {
+  console.log( `bookLoader bookIds = ${bookIds}` )
+} )
+
 export default {
   Query:{
-    author( parent, {name}, ctx, info ) {
-      console.log(`called author resolver args = ${name}`);
+    author( parent, args, ctx, info ) {
+      console.log( `called author resolver args = `, JSON.stringify( args ) )
       return {
         id: 'esdkfajs',
         firstName: 'Joe',
@@ -10,7 +19,8 @@ export default {
     }
   },
   Author:{
-    books(parent, args, ctx, info){
+    books( parent, args, ctx, info){
+      console.log( `called author.books resolver parent = `, JSON.stringify( parent ) )
       return [
         {
           id: 'dasdkfjasdfas',
@@ -28,3 +38,4 @@ export default {
     }
   }
 };
+

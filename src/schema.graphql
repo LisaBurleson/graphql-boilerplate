@@ -5,7 +5,27 @@
 
 type Query{
   me: User!
-  author(name: String): Author!
-  book: Book!
-  books: [Book!]!
+  author(name: String, gender: Gender): Author!
+  book(where:Predicate): Book!
+  books(where:Predicate): [Book!]!
+}
+
+enum Gender{
+  MALE,
+  FEMALE
+}
+
+input Predicate{
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """Logical AND on all given filters."""
+  AND: [Predicate!],
+
+  """Logical OR on all given filters."""
+  OR: [Predicate!],
+
+  name: String,
+  fistName: String,
+  lastName: String
 }

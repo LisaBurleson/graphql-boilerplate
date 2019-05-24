@@ -11,10 +11,13 @@ const typeDefs = importSchema( './src/schema.graphql' )
 
 const resolvers = merge( MeResolver, BookResolver, AuthorResolver )
 
-const schema = makeExecutableSchema( {typeDefs, resolvers} )
+const schema = makeExecutableSchema( {
+  typeDefs,
+  resolvers
+} )
 
-const server = new GraphQLServer( {schema} )
+const server = new GraphQLServer( {schema, context: {myVar: 'some-value'}} )
 
-server.start( ( server ) => {
+let promise = server.start( ( server ) => {
   console.log( `Server listening on http://localhost:${server.port}` )
 } )
